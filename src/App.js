@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+// src/App.js
+import React from 'react';
+import Header from './components/Header';
+import './App.css';
+import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import Home from './pages/Home';
+import AuthPage from './pages/AuthPage';
+import ProductsPage from "./pages/ProductsPage";
+import Footer from "./components/Footer";
+import ProductDetail from "./pages/ProductDetail";
+import NationalPage from "./pages/NationalPage";
+function AppContent() {
+    const location = useLocation();
+    const isAuthPage = location.pathname === '/auth'; // убедись, что маршрут точно /auth
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+          <Header fixed={isAuthPage} />
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/auth" element={<AuthPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/productDetail" element={<ProductDetail />} />
+              <Route path="/products/:id" element={<ProductDetail />} />
+              <Route path="/national" element={<NationalPage />} />
+          </Routes>
+          <Footer/>
+      </>
   );
+}
+
+
+function App(){
+    return (
+        <Router>
+            <AppContent />
+        </Router>
+    );
 }
 
 export default App;

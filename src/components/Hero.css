@@ -1,0 +1,70 @@
+/* src/components/Hero.css */
+.hero {
+    width: 100%;
+    height: 671px; /* или авто, в зависимости от макета */
+    background: url('/public/images/photo.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.hero-content {
+    top: -15px;
+    font-size: 40px;
+    text-align: center;
+    color: #fff; /* белый текст поверх картинки */
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.hero:before{
+    content: "";
+    position: absolute;
+    height: 671px;
+    top: 65px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.small-text{
+    font-size: 30px;
+}
+
+.big-text{
+    font-size: 40px;
+    z-index: 2;
+}
+
+.hero-button {
+    padding: 12px 24px;
+    background-color: #688704;   /* основной цвет кнопки */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+
+/* Эффект при наведении */
+.hero-button:hover {
+    transform: scale(1.05);          /* немного увеличивается */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #495d05;       /* немного темнее */
+}
+
+/* Эффект при нажатии (active) */
+.hero-button:active {
+    transform: scale(0.98);          /* немного уменьшается для эффекта нажатия */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

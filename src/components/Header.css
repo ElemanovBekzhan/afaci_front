@@ -1,0 +1,83 @@
+/* src/components/Header.css */
+.header {
+    position: relative;
+    background-color: #fff;
+    padding: 32px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    position: relative;
+    height: 100%;
+}
+/* Центрируем список навигационных кнопок */
+.nav-links {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 70px; /* расстояние между кнопками */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Эффекты при наведении */
+.nav-links li a:hover {
+    color: #4E6701;
+    transform: translateY(-2px);    /* небольшое поднятие кнопки */
+}
+.nav-links li a:hover::after {
+    width: 100%;                    /* линия выдвигается на всю ширину */
+}
+.auth .login:hover {
+    color: #4E6701;
+}
+.auth .login {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Кнопка "Войти" в правом углу */
+.auth {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.nav-links li a {
+    position: relative;             /* для позиционирования псевдоэлемента */
+    text-decoration: none;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;                   /* позиция чуть ниже текста */
+    left: 0;
+    width: 0;
+    height: 2px;                    /* толщина линии */
+    background: #4E6701;            /* цвет линии, можно подстроить */
+    transition: width 0.3s ease;
+}
+
+/* Логотип "Affaci" слева */
+.logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #4E6701;
+}
