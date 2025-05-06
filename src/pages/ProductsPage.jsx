@@ -19,7 +19,7 @@ export default function ProductsPage() {
     const [categoriesList, setCategoriesList] = useState([]);
     const [regionsList, setRegionsList] = useState([]);
 
-    const ITEMS_PER_PAGE = 20;
+    const ITEMS_PER_PAGE = 10;
     const API = process.env.REACT_APP_API_URL
     // Загрузка списков категорий и регионов
     useEffect(() => {
