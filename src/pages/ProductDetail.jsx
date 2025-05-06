@@ -9,9 +9,9 @@ export default function ProductDetail() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const API = process.env.REACT_APP_API_URL
     useEffect(() => {
-        fetch(`http://localhost:9876/api/product/details/${id}`, { mode: 'cors' })
+        fetch(`${API}/product/details/${id}`, { mode: 'cors' })
             .then(res => {
                 if (!res.ok) throw new Error(`Ошибка ${res.status}`);
                 return res.json();

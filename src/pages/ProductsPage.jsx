@@ -20,14 +20,14 @@ export default function ProductsPage() {
     const [regionsList, setRegionsList] = useState([]);
 
     const ITEMS_PER_PAGE = 10;
-
+    const API = process.env.REACT_APP_API_URL
     // Загрузка списков категорий и регионов
     useEffect(() => {
-        fetch('http://localhost:9876/api/product/getCategoryList', { mode: 'cors' })
+        fetch(`${API}/product/getCategoryList`, { mode: 'cors' })
             .then(res => res.ok ? res.json() : [])
             .then(setCategoriesList)
             .catch(() => setCategoriesList([]));
-        fetch('http://localhost:9876/api/product/getRegionsList', { mode: 'cors' })
+        fetch(`${API}/product/getRegionsList`, { mode: 'cors' })
             .then(res => res.ok ? res.json() : [])
             .then(setRegionsList)
             .catch(() => setRegionsList([]));
@@ -37,7 +37,7 @@ export default function ProductsPage() {
     const loadPage = useCallback(() => {
         setLoading(true);
         setError(null);
-        fetch(`http://localhost:9876/api/product?page=${page}&size=${ITEMS_PER_PAGE}`, { mode: 'cors' })
+        fetch(`${API}/product?page=${page}&size=${ITEMS_PER_PAGE}`, { mode: 'cors' })
             .then(res => {
                 if (!res.ok) throw new Error(res.status);
                 return res.json();
@@ -54,7 +54,7 @@ export default function ProductsPage() {
     const doSearch = useCallback(() => {
         if (!searchTerm) return;
         setLoading(true);
-        fetch(`http://localhost:9876/api/product/search?name=${encodeURIComponent(searchTerm)}`, { mode: 'cors' })
+        fetch(`${API}/product/search?name=${encodeURIComponent(searchTerm)}`, { mode: 'cors' })
             .then(res => res.json())
             .then(list => setProducts(list))
             .catch(err => setError(err))
@@ -65,7 +65,7 @@ export default function ProductsPage() {
     const doFilterCategory = useCallback(() => {
         if (!selectedCategory) return;
         setLoading(true);
-        fetch(`http://localhost:9876/api/product/searchcategory?id=${encodeURIComponent(selectedCategory)}`, { mode: 'cors' })
+        fetch(`${API}/product/searchcategory?id=${encodeURIComponent(selectedCategory)}`, { mode: 'cors' })
             .then(res => res.json())
             .then(list => setProducts(list))
             .catch(err => setError(err))
@@ -89,7 +89,7 @@ export default function ProductsPage() {
         setLoading(true);
         setError(null);
         fetch(
-            `http://localhost:9876/api/product/searchregion?id=${encodeURIComponent(
+            `${API}/product/searchregion?id=${encodeURIComponent(
                 selectedRegion
             )}`,
             { mode: 'cors' }
