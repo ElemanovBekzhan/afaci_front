@@ -23,6 +23,8 @@ jobs:
 
     # 3. установка зависимостей + сборка
     - name: Install & Build
+      env:
+        CI: false
       run: |
         npm ci
         npm run build           # результат → ./build
