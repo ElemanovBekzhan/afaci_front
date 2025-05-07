@@ -4,10 +4,10 @@ import './Categories.css';
 
 const categoriesData = [
     { name: 'Овощи', image: '/images/Pomidor.png' },
-    { name: 'Мясо', image: '/images/meat.png' },
-    { name: 'Молочные продукты', image: '/images/milk.png' },
+    { name: 'Мясо', image: '/images/Meat.png' },
+    { name: 'Молочные продукты', image: '/images/Milk.png' },
     { name: 'Зерновые', image: '/images/Zerno.png' },
-    { name: 'Сыпучий продукт', image: '/images/ris.png' },
+    { name: 'Сыпучий продукт', image: '/images/Ris.png' },
     { name: 'Грибы', image: '/images/Grib.png' },
 ];
 
