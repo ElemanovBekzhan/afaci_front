@@ -93,6 +93,7 @@
     align-items: center;
     justify-content: space-between;
     /* Задаём минимальную высоту и уменьшаем вертикальные паддинги */
+
     min-height: 64px;
     padding: 16px 40px;
     background-color: #fff;
@@ -108,7 +109,7 @@
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     color: #4E6701;
-    margin-right: 15rem;
+    margin-right: 10rem;
     display: flex;
     align-items: center;
     /*margin: 0;*/
@@ -163,7 +164,7 @@
 /* Блок «Войти» */
 .auth {
           /* ни растягиваться, ни сжиматься */
-    margin-left: 15rem;    /* отступ от навигации */
+    margin-left: 10rem;    /* отступ от навигации */
     display: flex;
     align-items: center;
 }
@@ -194,3 +195,4 @@
     /* Здесь можете вывести кнопку-гамбургер: */
     /* .menu-btn { display: block; } */
 }
+
