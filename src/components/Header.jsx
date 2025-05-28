@@ -58,7 +58,7 @@ function Header() {
                     <li><a href="/">Главная</a></li>
                     <li><a href="/products">Продукты по регионам</a></li>
                     <li><a href="/national">Национальные блюда</a></li>
-                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#abou">О нас</a></li>
                 </ul>
 
                 {/*  ПРАВО — кнопка Войти */}
