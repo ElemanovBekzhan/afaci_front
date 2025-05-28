@@ -2,7 +2,7 @@
 .hero {
     width: 100%;
     height: 671px; /* или авто, в зависимости от макета */
-    background: url('/public/images/photo.png') center/cover no-repeat;
+    background: url('/public/images/home.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;

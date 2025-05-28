@@ -12,10 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+/*
 .container {
-  max-width: 1200px;      /* или 1200px, как вам нужно */
-  margin: 0 auto;        /* центрирует по горизонтали */
-  padding: 0 20px;       /* небольшие боковые отступы */
+  max-width: 1300px;      !* или 1200px, как вам нужно *!
+  margin: 0 auto;        !* центрирует по горизонтали *!
+  padding: 0 20px;       !* небольшие боковые отступы *!
   box-sizing: border-box;
-}
+}*/

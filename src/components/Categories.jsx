@@ -4,10 +4,15 @@ import './Categories.css';
 
 const categoriesData = [
     { name: 'Овощи', image: '/images/Pomidor.png' },
-    { name: 'Мясо', image: '/images/Meat.png' },
+    { name: 'Мясные продукты', image: '/images/Meat.png' },
+    { name: 'Рыбные продукты', image: '/images/Fish2.png' },
     { name: 'Молочные продукты', image: '/images/Milk.png' },
-    { name: 'Зерновые', image: '/images/Zerno.png' },
-    { name: 'Сыпучий продукт', image: '/images/Ris.png' },
+    { name: 'Жировые продукты', image: '/images/Jir.png' },
+    { name: 'Зерно и продукты его переработки', image: '/images/Zerno.png' },
+    { name: 'Бобовые', image: '/images/bob.png' },
+    { name: 'Фрукты', image: '/images/Fruitss.png' },
+    { name: 'Кондитерские изделия', image: '/images/Bakery.png' },
+    { name: 'Напитки', image: '/images/Drinks.png' },
     { name: 'Грибы', image: '/images/Grib.png' },
 ];
 

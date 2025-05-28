@@ -1,8 +1,7 @@
 // src/components/Hero.jsx
 import React from 'react';
 import './Hero.css';
-// Допустим, фоновые овощи у нас — это картинка, которую вы поместили в public/images или в src/assets
-// Пример, если она лежит в public/images/veggies.jpg, то можно прописать фон через CSS
+
 
 function Hero() {
     return (
