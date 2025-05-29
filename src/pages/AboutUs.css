@@ -1,0 +1,173 @@
+/* src/components/AboutUs.css */
+
+.about-us {
+    padding: 60px 20px;
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 900px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2a2a2a;
+}
+
+.about-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.about-section {
+    margin-top: 2rem;
+}
+
+.about-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #2a2a2a;
+}
+
+.about-section h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+    color: #444;
+}
+
+.about-section p,
+.about-section ul {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-left: 1rem;
+}
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-section ul li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.about-section ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #688704;
+}
+
+.about-conclusion {
+    margin-top: 2.5rem;
+    font-style: italic;
+}
+
+.about-conclusion a {
+    color: #688704;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.about-conclusion a:hover {
+    border-color: #688704;
+}
+/* Таймлайн */
+.timeline {
+    position: relative;
+    margin: 40px 0;
+    padding-left: 20px;
+    border-left: 2px solid #ccc;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 40px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.timeline-item.reverse {
+    flex-direction: row-reverse;
+    padding-left: 0;
+    padding-right: 40px;
+    text-align: right;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    background: #688704;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #ccc;
+}
+
+.timeline-item.reverse::before {
+    left: auto;
+    right: -9px;
+}
+
+.icon-wrapper {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 2px solid #688704;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.timeline-item.reverse .icon-wrapper {
+    margin-right: 0;
+    margin-left: 16px;
+}
+
+.content {
+    flex: 1;
+}
+
+.year-block {
+    margin: 16px 0;
+}
+
+.year-block h3 {
+    margin-bottom: 8px;
+    color: #688704;
+}
+
+.year-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.year-block ul li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.4em;
+}
+
+.year-block ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #688704;
+}

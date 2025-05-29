@@ -38,6 +38,7 @@ export default function ProductDetail() {
                         <th>Вещество</th>
                         {/*<th>Категория</th>*/}
                         <th>Количество</th>
+                        <th>Единица измерения</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,6 +47,7 @@ export default function ProductDetail() {
                             <td>{c.compoundName}</td>
                             {/*<td>{c.compoundCategory || '–'}</td> */}
                             <td>{c.quantity}</td>
+                            <td>{c.unit}</td>
                         </tr>
                     ))}
                     </tbody>
@@ -59,6 +61,7 @@ export default function ProductDetail() {
                     <tr>
                         <th>Минерал</th>
                         <th>Количество</th>
+                        <th>Единица измерения</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -66,6 +69,7 @@ export default function ProductDetail() {
                         <tr key={m.id}>
                             <td>{m.mineral}</td>
                             <td>{m.quantity}</td>
+                            <td>{m.unit}</td>
                         </tr>
                     ))}
                     </tbody>

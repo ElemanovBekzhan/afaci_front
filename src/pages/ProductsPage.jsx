@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductsPage.css';
 
+
 export default function ProductsPage() {
     const navigate = useNavigate();
 
@@ -22,7 +23,8 @@ export default function ProductsPage() {
     const ITEMS_PER_PAGE = 10;
     const API = process.env.REACT_APP_API_URL
     // Загрузка списков категорий и регионов
-    useEffect(() => {
+
+    useEffect( () => {
         fetch(`${API}/product/getCategoryList`, { mode: 'cors' })
             .then(res => res.ok ? res.json() : [])
             .then(setCategoriesList)
@@ -67,7 +69,12 @@ export default function ProductsPage() {
         setLoading(true);
         fetch(`${API}/product/searchcategory?id=${encodeURIComponent(selectedCategory)}`, { mode: 'cors' })
             .then(res => res.json())
-            .then(list => setProducts(list))
+            // .then(list => setProducts(list))
+            .then(data => {
+                const list = Array.isArray(data) ? data : (data.content || []);
+                setProducts(list);
+                setTotalPages(data.totalPages || 1);
+            })
             .catch(err => setError(err))
             .finally(() => setLoading(false));
     }, [selectedCategory]);

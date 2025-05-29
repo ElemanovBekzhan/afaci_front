@@ -47,3 +47,60 @@
     margin: 0;
     color: #333;
 }
+
+
+
+/* Секция с информационным блоком */
+.info-block {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-content {
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.6;
+    color: #333;
+}
+
+.info-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.info-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.info-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.info-content ul li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+    font-size: 1rem;
+}
+
+/* Добавим «точечку»-маркер через ::before */
+.info-content ul li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    font-size: 0.6em;
+    color: #688704;
+}
+
+/* Плавное появление по наведению (если нужно) */
+.info-content:hover {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.95;
+    transform: translateY(-2px);
+}
