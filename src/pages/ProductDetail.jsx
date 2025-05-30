@@ -1,4 +1,3 @@
-// src/pages/ProductDetail.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProductDetail.css';
@@ -38,7 +37,7 @@ export default function ProductDetail() {
                         <th>Вещество</th>
                         {/*<th>Категория</th>*/}
                         <th>Количество</th>
-                        <th>Единица измерения</th>
+                        <th>На 100грамм съедобной части</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -61,7 +60,7 @@ export default function ProductDetail() {
                     <tr>
                         <th>Минерал</th>
                         <th>Количество</th>
-                        <th>Единица измерения</th>
+                        <th>На 100грамм съедобной части</th>
                     </tr>
                     </thead>
                     <tbody>
