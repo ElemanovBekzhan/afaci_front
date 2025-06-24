@@ -122,6 +122,15 @@
     right: -9px;
 }
 
+.highlight {
+    font-weight: 600;
+    background-color: #f8f8f8;
+    padding: 12px;
+    border-left: 4px solid #0077cc;
+    margin-top: 1em;
+}
+
+
 .icon-wrapper {
     flex-shrink: 0;
     width: 40px;

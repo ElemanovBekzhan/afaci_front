@@ -1,24 +1,37 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Hero.css';
-
+import { useTranslation } from 'react-i18next';
 function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isSwiping, setIsSwiping]     = useState(false);
     const [startX, setStartX]           = useState(0);
     const timerRef                      = useRef(null);
+    const { t, i18n } = useTranslation();
 
+    // const slides = [
+    //     {
+    //         smallText: "База данных",
+    //         bigText1: "Продуктов питания",
+    //         bigText2: "Кыргызской Республики"
+    //     },
+    //     {
+    //         smallText: "Министерство",
+    //         bigText1: "Водных ресурсов, сельского хозяйства " +
+    //             "и перерабатывающей промышленности",
+    //         bigText2: "Кыргызской Республики"
+    //     },
+    // ];
     const slides = [
         {
-            smallText: "База данных",
-            bigText1: "Продуктов питания",
-            bigText2: "Кыргызской Республики"
+            smallTextKey: "slides.slide1.smallText",
+            bigText1Key: "slides.slide1.bigText1",
+            bigText2Key: "slides.slide1.bigText2"
         },
         {
-            smallText: "Министерство",
-            bigText1: "Водных ресурсов, сельского хозяйства " +
-                "и перерабатывающей промышленности",
-            bigText2: "Кыргызской Республики"
-        },
+            smallTextKey: "slides.slide2.smallText",
+            bigText1Key: "slides.slide2.bigText1",
+            bigText2Key: "slides.slide2.bigText2"
+        }
     ];
 
     // Автопрокрутка
@@ -88,9 +101,9 @@ function Hero() {
                             className={`slide ${idx === currentSlide ? 'active' : ''}`}
                         >
                             <h1>
-                                <span className="small-text">{slide.smallText}</span><br />
-                                <span className="big-text">{slide.bigText1}</span><br />
-                                <span className="big-text">{slide.bigText2}</span>
+                                <span className="small-text">{t(slide.smallTextKey)}</span><br />
+                                <span className="big-text">{t(slide.bigText1Key)}</span><br />
+                                <span className="big-text">{t(slide.bigText2Key)}</span>
                             </h1>
                         </div>
                     ))}
