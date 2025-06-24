@@ -23,7 +23,7 @@ jobs:
       env:
         CI: false
       run: |
-        npm ci
+        npm ci --legacy-peer-deps
         npm run build           # результат → ./build
 
     - name: Pack build folder
