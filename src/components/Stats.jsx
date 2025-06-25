@@ -1,10 +1,12 @@
 import {useEffect, useState} from 'react';
 import './Stats.css';
+import { useTranslation } from 'react-i18next';
 
 function Stats() {
     const [stats, setStats] = useState(null);
     const [loading, setLoading] = useState(null);
     const API = process.env.REACT_APP_API_URL
+    const { t } = useTranslation();
 
 
     useEffect(() => {
@@ -30,12 +32,12 @@ function Stats() {
         <section className="stats">
             <div className="stat-box">
                 <h2>{stats.products}</h2>
-                <p>Продуктов в базе</p>
+                <p>{t('products_in_db')}</p>
             </div>
 
             <div className="stat-box">
                 <h2>{stats.national}</h2>
-                <p>Национальных блюд</p>
+                <p>{t('national_dishes')}</p>
             </div>
         </section>
     );

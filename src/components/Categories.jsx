@@ -1,61 +1,61 @@
-// // import React, { useEffect, useState } from 'react';
-// // import { useNavigate, useSearchParams } from 'react-router-dom';
-// // import './Categories.css';
-// //
-// // const categoriesData = [
-// //     { id: '1b030d10-7e00-491b-a45e-9fded4de1f14', name: 'Овощи', image: '/images/Pomidor.png' },
-// //     { id: 'meat', name: 'Мясные продукты', image: '/images/Meat.png' },
-// //     { id: 'fish', name: 'Рыбные продукты', image: '/images/Fish2.png' },
-// //     { id: 'dairy', name: 'Молочные продукты', image: '/images/Milk.png' },
-// //     { id: 'fats', name: 'Жировые продукты', image: '/images/Жировые.png' },
-// //     { id: 'grain', name: 'Зерно и продукты его переработки', image: '/images/Zerno.png' },
-// //     { id: 'legumes', name: 'Бобовые, орехи', image: '/images/bob.png' },
-// //     { id: 'fruits', name: 'Фрукты', image: '/images/Fruitss.png' },
-// //     { id: 'bakery', name: 'Кондитерские изделия', image: '/images/Bakery.png' },
-// //     { id: 'drinks', name: 'Напитки', image: '/images/Drinks.png' },
-// //     { id: 'mushrooms', name: 'Грибы', image: '/images/Grib.png' },
-// // ];
-// //
-// // export default function Categories() {
-// //     const navigate = useNavigate();
-// //     const [searchParams] = useSearchParams();
-// //
-// //     // Если пришёл query параметр classification — сбросим его после навигации
-// //     useEffect(() => {
-// //         const cls = searchParams.get('classification');
-// //         if (cls) {
-// //             // сбрасываем, чтобы не сохранять в URL постоянно
-// //             navigate('/products', { replace: true });
-// //         }
-// //     }, [searchParams, navigate]);
-// //
-// //     // Обработчик клика по классификации
-// //     const onCategoryClick = (id) => {
-// //         // передаём параметр classification
-// //         navigate(`/products?classification=${id}`);
-// //     };
-// //
-// //     return (
-// //         <section className="categories">
-// //             <h2>Классификации продуктов</h2>
-// //             <div className="categories-grid">
-// //                 {categoriesData.map(cat => (
-// //                     <div
-// //                         key={cat.id}
-// //                         className="category-card"
-// //                         onClick={() => onCategoryClick(cat.id)}
-// //                     >
-// //                         <img src={cat.image} alt={cat.name} />
-// //                         <p>{cat.name}</p>
-// //                     </div>
-// //                 ))}
-// //             </div>
-// //         </section>
-// //     );
-// // }
-// //
+// import React, { useEffect, useState } from 'react';
+// import { useNavigate, useSearchParams } from 'react-router-dom';
+// import './Categories.css';
 //
-// ======================================================================================x
+// const categoriesData = [
+//     { id: '1b030d10-7e00-491b-a45e-9fded4de1f14', name: 'Овощи', image: '/images/Pomidor.png' },
+//     { id: 'meat', name: 'Мясные продукты', image: '/images/Meat.png' },
+//     { id: 'fish', name: 'Рыбные продукты', image: '/images/Fish2.png' },
+//     { id: 'dairy', name: 'Молочные продукты', image: '/images/Milk.png' },
+//     { id: 'fats', name: 'Жировые продукты', image: '/images/Жировые.png' },
+//     { id: 'grain', name: 'Зерно и продукты его переработки', image: '/images/Zerno.png' },
+//     { id: 'legumes', name: 'Бобовые, орехи', image: '/images/bob.png' },
+//     { id: 'fruits', name: 'Фрукты', image: '/images/Fruitss.png' },
+//     { id: 'bakery', name: 'Кондитерские изделия', image: '/images/Bakery.png' },
+//     { id: 'drinks', name: 'Напитки', image: '/images/Drinks.png' },
+//     { id: 'mushrooms', name: 'Грибы', image: '/images/Grib.png' },
+// ];
+//
+// export default function Categories() {
+//     const navigate = useNavigate();
+//     const [searchParams] = useSearchParams();
+//
+//     // Если пришёл query параметр classification — сбросим его после навигации
+//     useEffect(() => {
+//         const cls = searchParams.get('classification');
+//         if (cls) {
+//             // сбрасываем, чтобы не сохранять в URL постоянно
+//             navigate('/products', { replace: true });
+//         }
+//     }, [searchParams, navigate]);
+//
+//     // Обработчик клика по классификации
+//     const onCategoryClick = (id) => {
+//         // передаём параметр classification
+//         navigate(`/products?classification=${id}`);
+//     };
+//
+//     return (
+//         <section className="categories">
+//             <h2>Классификации продуктов</h2>
+//             <div className="categories-grid">
+//                 {categoriesData.map(cat => (
+//                     <div
+//                         key={cat.id}
+//                         className="category-card"
+//                         onClick={() => onCategoryClick(cat.id)}
+//                     >
+//                         <img src={cat.image} alt={cat.name} />
+//                         <p>{cat.name}</p>
+//                     </div>
+//                 ))}
+//             </div>
+//         </section>
+//     );
+// }
+//
+//
+//
 // import './Categories.css';
 // import React from 'react';
 // import { motion } from 'framer-motion';
@@ -103,8 +103,8 @@
 //         </section>
 //     );
 // }
-//
-//
+
+
 
 
 import './Categories.css';

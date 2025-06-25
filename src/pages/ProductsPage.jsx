@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductsPage.css';
+import { useTranslation } from 'react-i18next';
 
 
 export default function ProductsPage() {
@@ -22,6 +23,15 @@ export default function ProductsPage() {
 
     const ITEMS_PER_PAGE = 10;
     const API = process.env.REACT_APP_API_URL
+
+
+    //Перевод
+    const { t, i18n } = useTranslation();
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+        setProducts([]);
+        setPage(0);
+    };
     // Загрузка списков категорий и регионов
 
     useEffect( () => {
@@ -39,7 +49,10 @@ export default function ProductsPage() {
     const loadPage = useCallback(() => {
         setLoading(true);
         setError(null);
-        fetch(`${API}/product?page=${page}&size=${ITEMS_PER_PAGE}`, { mode: 'cors' })
+
+        const lang = i18n.language || 'ru'; //fallback на РУ
+
+        fetch(`${API}/product?page=${page}&size=${ITEMS_PER_PAGE}&lng=${lang}`, { mode: 'cors' })
             .then(res => {
                 if (!res.ok) throw new Error(res.status);
                 return res.json();
@@ -50,13 +63,15 @@ export default function ProductsPage() {
             })
             .catch(err => setError(err))
             .finally(() => setLoading(false));
-    }, [page]);
+    }, [page, i18n.language]);
 
     // Поиск без пагинации
     const doSearch = useCallback(() => {
         if (!searchTerm) return;
         setLoading(true);
-        fetch(`${API}/product/search?name=${encodeURIComponent(searchTerm)}`, { mode: 'cors' })
+
+        const lang = i18n.language || 'ru';
+        fetch(`${API}/product/search?name=${encodeURIComponent(searchTerm)}&lng=${lang}`, { mode: 'cors' })
             .then(res => res.json())
             .then(list => setProducts(list))
             .catch(err => setError(err))
@@ -67,7 +82,9 @@ export default function ProductsPage() {
     const doFilterCategory = useCallback(() => {
         if (!selectedCategory) return;
         setLoading(true);
-        fetch(`${API}/product/searchcategory?id=${encodeURIComponent(selectedCategory)}`, { mode: 'cors' })
+
+        const lang = i18n.language || 'ru';
+        fetch(`${API}/product/searchcategory?id=${encodeURIComponent(selectedCategory)}&lng=${lang}`, { mode: 'cors' })
             .then(res => res.json())
             // .then(list => setProducts(list))
             .then(data => {
@@ -95,10 +112,11 @@ export default function ProductsPage() {
         if (!selectedRegion) return;
         setLoading(true);
         setError(null);
+        const lang = i18n.language || 'ru';
         fetch(
             `${API}/product/searchregion?id=${encodeURIComponent(
                 selectedRegion
-            )}`,
+            )}&lang=${lang}`,
             { mode: 'cors' }
         )
             .then(res => {
@@ -114,6 +132,11 @@ export default function ProductsPage() {
             .catch(err => setError(err))
             .finally(() => setLoading(false));
     }, [selectedRegion]);
+
+    useEffect(() => {
+        setProducts([]);
+        setPage(1);
+    }, [i18n.language]);
 
     // При изменении page/search/category/region
     useEffect(() => {

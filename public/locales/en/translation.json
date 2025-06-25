@@ -63,6 +63,66 @@
     "newSectionTextIntro": "The Department of Food Processing and Organic Agriculture of the Ministry of Agriculture and Water Resources of the Kyrgyz Republic, together with I. Razzakov Kyrgyz Technical University and supported by the AFACI project, has been conducting research at the accredited laboratory of food and agricultural products of the CSM under the Ministry of Economy of the Kyrgyz Republic since December 2021.",
     "newSectionTextHighlight": "The research is led by the project’s Lead Researcher — Director of the Department, Chynaliev M. T., along with food engineering scientists, PhD Aksupova A. M., Professor Djamakeeva A. D. of KTU, and members of the Technical Committee."
 
-  }
+  },
 
+
+
+
+  "regions": {
+    "Чуйская область": "Chüy"
+  },
+
+  "categories": {
+    "Готовые продукты": "Finished products"
+  },
+
+  "NatioanalBitText": "National dishes of the Kyrgyz Republic",
+
+  "loading": "Loading...",
+  "error": "Error",
+  "error_message": "Error: {{error}}",
+  "back": "Back",
+  "chemical_composition": "Chemical Composition",
+  "mineral_composition": "Mineral Composition",
+  "substance": "Substance",
+  "quantity": "Quantity",
+  "per_100g": "Per 100 grams of edible portion",
+  "mineral": "Mineral",
+  "category": "Category",
+  "region": "Region",
+
+
+
+  "minerals": {
+    "Кальций": "Calcium",
+    "Натрий": "Sodium",
+    "Калий": "Potassium",
+    "Фосфор": "Phosphorus",
+    "Марганец": "Manganese",
+    "Цинк": "Zinc",
+    "Скандий": "Scandium",
+    "Медь": "Copper",
+    "Железо": "Iron",
+    "Барий": "Barium",
+    "Бор": "Boron",
+    "Литий": "Lithium",
+    "Алюминий": "Aluminium",
+    "Магний": "Magnesium",
+    "Ванадий": "Vanadium",
+    "Нитрий": "Sodium",
+    "Коваль": "Cobalt",
+    "Хром": "Chromium",
+    "Олово": "Tin"
+  },
+  "compounds": {
+    "Белок": "Protein",
+    "Жир": "Fat",
+    "Углеводы": "Carbohydrates",
+    "Зольность": "Ash content",
+    "Влажность": "Moisture",
+    "Энергетическая ценность": "Energy value"
+  },
+
+  "products_in_db": "Products in database",
+  "national_dishes": "National dishes"
 }
