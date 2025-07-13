@@ -124,5 +124,17 @@
   },
 
   "products_in_db": "Products in database",
-  "national_dishes": "National dishes"
+  "national_dishes": "National dishes",
+
+
+
+  "table": {
+    "name": "Name",
+    "category": "Category",
+    "region": "Region"
+  },
+
+  "search": {
+    "placeholder": "Search by name..."
+  }
 }

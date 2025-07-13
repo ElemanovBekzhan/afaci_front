@@ -167,13 +167,14 @@ export default function ProductsPage() {
     if (error) return <div className="error">Ошибка: {error.message}</div>;
 
     return (
+
         <div className="products-page">
             {/* Поиск и фильтры */}
             <div className="filter-bar">
                 <input
                     type="text"
                     className="search-input"
-                    placeholder="Поиск по названию..."
+                    placeholder={t('search.placeholder')}
                     value={searchTerm}
                     onChange={e => {
                         setSearchTerm(e.target.value);
@@ -221,10 +222,10 @@ export default function ProductsPage() {
                 <table>
                     <thead>
                     <tr>
-                        <th>Название</th>
-                        <th>Категория</th>
-                        <th>Регион</th>
-                        <th>Дата добавления</th>
+                        <th>{t('table.name')}</th>
+                        <th>{t('table.category')}</th>
+                        <th>{t('table.region')}</th>
+                        {/*<th>Дата добавления</th>*/}
                     </tr>
                     </thead>
                     <tbody>
@@ -237,16 +238,16 @@ export default function ProductsPage() {
                             <td>{p.name}</td>
                             <td>{p.categories || '-'}</td>
                             <td>{p.region || '-'}</td>
-                            <td>{p.date
-                                ? (() => {
-                                    const d = new Date(p.date);
-                                    const day = d.getDate();
-                                    const month = d.getMonth() + 1;
-                                    const year = d.getFullYear();
-                                    return `${day}-${month.toString().padStart(2, '0')}-${year}`;
-                                })()
-                                : '-'
-                            }</td>
+                            {/*<td>{p.date*/}
+                            {/*    ? (() => {*/}
+                            {/*        const d = new Date(p.date);*/}
+                            {/*        const day = d.getDate();*/}
+                            {/*        const month = d.getMonth() + 1;*/}
+                            {/*        const year = d.getFullYear();*/}
+                            {/*        return `${day}-${month.toString().padStart(2, '0')}-${year}`;*/}
+                            {/*    })()*/}
+                            {/*    : '-'*/}
+                            {/*}</td>*/}
                         </tr>
                     ))}
                     </tbody>
