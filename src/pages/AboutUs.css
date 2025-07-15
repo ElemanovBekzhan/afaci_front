@@ -214,13 +214,14 @@
 
 /* 📸 Сетка карточек с фото */
 .photo-card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-    margin: 50px auto;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
+
 
 .photo-card {
     background: white;
