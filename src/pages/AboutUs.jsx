@@ -267,6 +267,12 @@ export default function AboutUs() {
     const { t } = useTranslation();
     const [selectedImage, setSelectedImage] = useState(null);
 
+    const photos = [
+        { src: '/images/about/photo1.jpg', year: '2023' },
+        { src: '/images/about/photo2.jpg', year: '2024' },
+        { src: '/images/about/photo3.jpg', year: '2025' },
+        { src: '/images/about/photo4.jpg', year: '2025' },
+    ];
     return (
         <section className="about-us">
             <motion.div
@@ -279,10 +285,9 @@ export default function AboutUs() {
                 {/* Заголовок и описание */}
                 <motion.h1
                     className="about-heading"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2, duration: 0.4 }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
                 >
                     {t('aboutUs.title')}
                 </motion.h1>
@@ -290,11 +295,13 @@ export default function AboutUs() {
                 <motion.p
                     className="about-intro"
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.4, duration: 0.4 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
                 >
                     {t('aboutUs.intro')}
                 </motion.p>
+
+
 
                 <motion.div
                     className="photo-card-grid"
@@ -303,16 +310,17 @@ export default function AboutUs() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.5, duration: 0.6 }}
                 >
-                    {[1, 2, 3].map((i) => (
+                    {photos.map((photo, index) => (
                         <motion.div
-                            key={i}
+                            key={index}
                             className="photo-card"
                             whileHover={{ scale: 1.02, y: -3 }}
                             transition={{ duration: 0.3 }}
-                            onClick={() => setSelectedImage(`/images/about/photo${i}.jpg`)}
+                            onClick={() => setSelectedImage(photo.src)}
                             style={{ cursor: 'pointer' }}
                         >
-                            <img src={`/images/about/photo${i}.jpg`} alt={`Photo ${i}`} />
+                            <img src={photo.src} alt={`Photo ${index + 1}`} />
+                            <p className="photo-year">{photo.year}</p>
                         </motion.div>
                     ))}
                 </motion.div>
